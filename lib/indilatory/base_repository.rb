@@ -5,13 +5,13 @@ module Indilatory
   #
   # This class is intended to be subclassed and not used directly.
   #
-  class Repository
+  class BaseRepository
     include Enumerable
     extend Forwardable
     def_delegators :all, :each, :size
 
-    def initialize(dir)
-      @dir = dir
+    def initialize(root_repo)
+      @root_repo = root_repo
       Dir.mkdir(entity_dir) unless Dir.exist?(entity_dir)
     end
 
@@ -42,13 +42,13 @@ module Indilatory
     # is used to map objects from and to an IO object.
     #
     def mapper
-      "#{entity.name}Mapper".constantize
+      "#{entity}Mapper".constantize.new(@root_repo)
     end
 
     private
 
     def entity_dir
-      File.join(@dir.path, entity.name.demodulize.downcase.pluralize)
+      File.join(@root_repo.dir.path, entity.name.demodulize.downcase.pluralize)
     end
 
     def location(file = '*')

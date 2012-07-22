@@ -1,9 +1,11 @@
 require 'helper'
 
 class TestTaskRepository < RepositoryTestCase
+  include Indilatory
+
   def setup
     super
-    @repo = TaskRepository.new(Dir.new(repo_path))
+    @repo = MetaRepository.new(Dir.new(repo_path)).repository(Task)
   end
 
   def test_all_empty

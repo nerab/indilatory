@@ -1,5 +1,5 @@
 module Indilatory
-  class TaskRepository < Repository
+  class TaskRepository < BaseRepository
     protected
 
     def entity

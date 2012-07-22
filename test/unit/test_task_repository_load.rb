@@ -4,7 +4,7 @@ class TestTaskRepositoryLoad < RepositoryTestCase
   include Indilatory
 
   def setup
-    @repo = TaskRepository.new(fixtures_dir(self.class.name.underscore))
+    @repo = MetaRepository.new(fixtures_dir(self.class.name.underscore)).repository(Task)
   end
 
   def test_load

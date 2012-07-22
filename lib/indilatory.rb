@@ -7,8 +7,10 @@ require 'indilatory/task'
 require 'indilatory/project'
 require 'indilatory/tag'
 
-require 'indilatory/repository'
+require 'indilatory/base_repository'
 require 'indilatory/task_repository'
+require 'indilatory/meta_repository'
+require 'indilatory/mapper'
 require 'indilatory/task_mapper'
 
 module Indilatory
