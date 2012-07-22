@@ -1,7 +1,7 @@
 module Indilatory
   #
-  # Base class for our domain entities. Note that this class does not derive
-  # from any other base class just because we want to have associations.
+  # Base class for our domain entities. Note that this class does not have to
+  # derive from any other base class just because we want to have associations.
   #
   class Entity
     attr_accessor :uuid
