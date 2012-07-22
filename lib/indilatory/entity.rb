@@ -28,10 +28,10 @@ module Indilatory
     #
     # Equality comparison
     #
-    # In contrast to identity comparison, equality is defined as having _all_ attributes identical
+    # In contrast to identity comparison, equality is defined as having _all_ attributes identical, not just the uuid
     #
     def eql?(other)
-      attributes.all?{|attr| send(attr).eql?(other.send(attr)}
+      self.class.attributes.all?{|attr| send(attr).eql?(other.send(attr))}
     end
   end
 end
