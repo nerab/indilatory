@@ -1,5 +1,7 @@
 # Indilatory
 
+[![Build Status](https://secure.travis-ci.org/nerab/indilatory.png?branch=master)](http://travis-ci.org/nerab/indilatory)
+
 This is the sample application and unit test bucket for [ddd-associations](https://github.com/nerab/ddd-associations), an implementation of object associations (like [ActiveRecord](http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html)) that does not require any persistence layer to correctly model the object associations.
 
 # What about the name?
