@@ -1,16 +1,9 @@
 require 'helper'
-require 'tempfile'
 
-class TestTaskRepository < MiniTest::Unit::TestCase
-  include Indilatory
-
+class TestTaskRepository < RepositoryTestCase
   def setup
-    @data_dir = Dir.mktmpdir
-    @repo = TaskRepository.new(Dir.new(@data_dir))
-  end
-
-  def teardown
-    FileUtils.rm_r(@data_dir) if @data_dir && Dir.exist?(@data_dir)
+    super
+    @repo = TaskRepository.new(Dir.new(repo_path))
   end
 
   def test_all_empty
